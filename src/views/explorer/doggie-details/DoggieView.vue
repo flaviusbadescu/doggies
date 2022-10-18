@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useDoggieStore } from "@/stores/doggieStore";
+import DoggieLoader from "./DoggieLoader.vue";
 import DoggieTraits from "./DoggieTraits.vue";
 
 const store = useDoggieStore();
 </script>
 
 <template>
-  <div v-if="store?.doggie">
+  <div v-if="store?.doggie && !store.loading">
     <div class="grid grid-flow-row grid-cols-2">
       <div>
         <div>
@@ -29,4 +30,5 @@ const store = useDoggieStore();
     </div>
     <DoggieTraits :traits="store.doggie.attributes" />
   </div>
+  <DoggieLoader :isLoading="store.loading" />
 </template>

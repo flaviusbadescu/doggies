@@ -1,14 +1,21 @@
 <script setup lang="ts">
+import PrimaryButton from "@/components/button/PrimaryButton.vue";
 import { useDoggieStore } from "@/stores/doggieStore";
 import { ref } from "vue";
-const tokenId = ref();
 
+const tokenId = ref();
 const store = useDoggieStore();
 
 const onSearchHandler = () => {
   if (tokenId.value) {
     store.fetchDoggieById(tokenId.value);
   }
+};
+
+const onRandomSearchHandler = () => {
+  const randomTokenId = Math.floor(1000 + Math.random() * 9000);
+  tokenId.value = randomTokenId;
+  store.fetchDoggieById(randomTokenId);
 };
 </script>
 
@@ -20,10 +27,14 @@ const onSearchHandler = () => {
     class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
     v-model="tokenId"
   />
-  <button
-    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-2"
-    v-on:click="onSearchHandler"
-  >
-    Search
-  </button>
+  <PrimaryButton
+    :disabled="store.loading"
+    label="Search"
+    :onClick="onSearchHandler"
+  />
+  <PrimaryButton
+    :disabled="store.loading"
+    label="Random Search"
+    :onClick="onRandomSearchHandler"
+  />
 </template>
