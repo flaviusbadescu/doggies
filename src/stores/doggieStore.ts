@@ -12,7 +12,11 @@ export const useDoggieStore = defineStore("doggie", {
   }),
   actions: {
     async fetchDoggieById(tokenId: number) {
-      this.doggie = await api.etherscan.fetchEtherscan(tokenId);
+      try {
+        this.doggie = await api.etherscan.fetchDoggieById(tokenId);
+      } catch (error) {
+        return error;
+      }
     },
   },
 });

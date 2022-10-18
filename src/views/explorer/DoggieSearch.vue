@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import { useDoggieStore } from "@/stores/doggieStore";
 import { ref } from "vue";
-
 const tokenId = ref();
 
 const store = useDoggieStore();
 
 const onSearchHandler = () => {
   if (tokenId.value) {
-    console.log(tokenId.value);
     store.fetchDoggieById(tokenId.value);
   }
 };

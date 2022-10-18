@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ContactImage from "../images/ContactImage.vue";
 import DoggieSearch from "./DoggieSearch.vue";
+import ContactImage from "@/components/images/ContactImage.vue";
 </script>
 
 <template>

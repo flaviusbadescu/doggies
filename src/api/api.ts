@@ -11,24 +11,19 @@ const provider = ethers.getDefaultProvider("homestead", {
   etherscan: API_KEY,
 });
 
-const fetchEtherscan = async (tokenId: number): Promise<Doggie | null> => {
-  try {
-    const contract = await getContract();
+const fetchDoggieById = async (tokenId: number): Promise<Doggie> => {
+  const contract = await getContract();
 
-    const owner = await contract.ownerOf(tokenId);
-    const tokenURI = await contract.tokenURI(tokenId);
-    const tokenData = await axios
-      .get<DoggieResponse>(tokenURI)
-      .then((response) => response.data);
+  const owner = await contract.ownerOf(tokenId);
+  const tokenURI = await contract.tokenURI(tokenId);
+  const tokenData = await axios
+    .get<DoggieResponse>(tokenURI)
+    .then((response) => response.data);
 
-    return {
-      ...tokenData,
-      owner,
-    };
-  } catch (error) {
-    console.error(error);
-  }
-  return null;
+  return {
+    ...tokenData,
+    owner,
+  };
 };
 
 const getContract = async () => {
@@ -47,6 +42,6 @@ const getContract = async () => {
 
 export const api = {
   etherscan: {
-    fetchEtherscan: fetchEtherscan,
+    fetchDoggieById: fetchDoggieById,
   },
 };
