@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from "../components/TheWelcome.vue";
+import DoggieExplorer from "../components/explorer/DoggieExplorer.vue";
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="flex justify-center">
+    <DoggieExplorer />
+  </div>
 </template>
