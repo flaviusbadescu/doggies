@@ -12,7 +12,7 @@ const store = useDoggieStore();
       <div>
         <div>
           <div class="font-bold">Title and Owner:</div>
-          <div>{{ store.doggie.name }}</div>
+          <div>{{ store.doggie.name }} - {{ store.doggie.owner }}</div>
         </div>
 
         <div class="mt-2 max-w-xs">
