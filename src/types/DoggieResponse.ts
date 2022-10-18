@@ -8,7 +8,7 @@ export type DoggieResponse = {
   animation_url: string;
 };
 
-type Traits = {
+export type Traits = {
   trait_type: string;
   value: string;
 };
