@@ -29,6 +29,8 @@ npm install
 
 ## Create .env file
 
+Make sure to provide an etherscan api key, you can follow those steps: https://docs.etherscan.io/getting-started/viewing-api-usage-statistics
+Also make sure to add the address for the contract
 ```sh
 VITE_ETHERSCAN_API=
 VITE_DOGGIE_CONTRACT=
