@@ -4,7 +4,7 @@ import DoggieSearch from "./DoggieSearch.vue";
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col">
     <div class="mt-20 mb-10 w-24 h-24 ml-auto mr-auto">
       <ContactImage />
     </div>

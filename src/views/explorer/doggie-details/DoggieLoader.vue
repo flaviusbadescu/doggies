@@ -10,9 +10,9 @@ defineProps<{
 
 <template>
   <div v-if="isLoading">
-    <div class="grid grid-flow-row grid-cols-2">
+    <div class="grid grid-flow-row lg:grid-cols-2 md:grid-cols-1">
       <TextLoader />
-      <div class="grid justify-end">
+      <div class="grid lg:justify-end justify-start mt-10 lg:mt-0">
         <ImageLoader />
       </div>
     </div>
