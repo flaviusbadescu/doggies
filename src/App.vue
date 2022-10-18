@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+import { api } from "./api/api";
 import HelloWorld from "./components/HelloWorld.vue";
+
+// console.log(import.meta.env.VITE_ETHERSCAN_API);
+
+api.etherscan.fetchEtherscan(5677).then(console.log);
 </script>
 
 <template>
