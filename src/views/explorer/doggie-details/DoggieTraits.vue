@@ -7,7 +7,9 @@ defineProps<{
 </script>
 
 <template>
-  <div class="grid grid-flow-col grid-cols-2 mt-10 bg-slate-300 p-4">
+  <div
+    class="grid grid-flow-col grid-cols-2 mt-10 bg-slate-700 text-cyan-50 font-bold p-4"
+  >
     <div class="grid justify-center">Trait</div>
     <div class="grid justify-center">Value</div>
   </div>

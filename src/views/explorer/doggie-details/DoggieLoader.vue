@@ -1,0 +1,23 @@
+<script setup lang="ts">
+import ImageLoader from "@/components/loader/ImageLoader.vue";
+import TableLoader from "@/components/loader/TableLoader.vue";
+import TextLoader from "@/components/loader/TextLoader.vue";
+
+defineProps<{
+  isLoading: boolean;
+}>();
+</script>
+
+<template>
+  <div v-if="isLoading">
+    <div class="grid grid-flow-row grid-cols-2">
+      <TextLoader />
+      <div class="grid justify-end">
+        <ImageLoader />
+      </div>
+    </div>
+    <div class="mt-10">
+      <TableLoader :rows="9" />
+    </div>
+  </div>
+</template>
