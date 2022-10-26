@@ -9,6 +9,7 @@ const CONTRACT_ADDRESS = import.meta.env.VITE_DOGGIE_CONTRACT;
 
 const provider = ethers.getDefaultProvider("homestead", {
   etherscan: API_KEY,
+  alchemy: import.meta.env.VITE_ALCHEMY_API,
 });
 
 const fetchDoggieById = async (tokenId: number): Promise<Doggie> => {
